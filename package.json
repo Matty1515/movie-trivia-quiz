@@ -28,6 +28,8 @@
   },
   "homepage": "https://github.com/Matty1515/movie-trivia-quiz#readme",
   "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-react": "^7.0.0",
     "gulp": "^4.0.1"
   }
 }
