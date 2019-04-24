@@ -1,0 +1,33 @@
+/* image src: https://pixabay.com/photos/cinema-theater-hall-curtain-2556157/ 
+background-image: url("https://pixabay.com/get/eb30b40929f1063ed1534705fb0938c9bd22ffd41cb4104892f0c278a4/cinema-2556157_1920.jpg");
+*/
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: #b30000;
+  text-align: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+h1, h2, h3, h4, h5, h6, p {
+  color: #ebeded; }
+
+#app {
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 200px;
+  padding-top: 20px; }
+
+button {
+  margin-left: 2px;
+  margin-right: 2px;
+  background-color: transparent;
+  color: white;
+  font-size: 16px;
+  padding: 4px;
+  border: 1.5px solid white;
+  border-radius: 10px; }
+
+button:hover {
+  cursor: pointer;
+  background-color: black; }

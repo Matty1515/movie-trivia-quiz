@@ -1,3 +1,4 @@
+/* jshint esversion: 6 */
 // TO DO:
 // - turn off jshint
 // - correctly format or get rid of quote marks in answers
@@ -64,13 +65,13 @@ class MyComponent extends React.Component {
     });
   }
   // moves on to the next question
-  nextQue = submitEvent => {
+  nextQue(e) {
     // prints state values for testing - GET RID UPON DEPLOYMENT
     console.log(this.state.selectedOption);
     console.log(this.state.correctAns);
     
     // stops the page from reloading for no apparent reason
-    submitEvent.preventDefault();
+    e.preventDefault();
     
     // if the answer is right (i.e. selectedOption equals correctAns) then +1 to numCorrect otherwise +1 to numWrong
     if (this.state.selectedOption === this.state.correctAns) {
