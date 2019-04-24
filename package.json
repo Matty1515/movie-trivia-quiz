@@ -30,6 +30,9 @@
   "devDependencies": {
     "@babel/core": "^7.4.3",
     "@babel/preset-react": "^7.0.0",
-    "gulp": "^4.0.1"
+    "gulp": "^4.0.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-webserver": "^0.9.1"
   }
 }
