@@ -1,0 +1,33 @@
+{
+  "name": "movie-trivia-quiz",
+  "version": "1.0.0",
+  "description": "A movie trivia quiz built with ReactJS and OpenTriviaDB",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Matty1515/movie-trivia-quiz.git"
+  },
+  "keywords": [
+    "movie",
+    "trivia",
+    "quiz",
+    "reactJS",
+    "api",
+    "OpenTriviaDB"
+  ],
+  "author": "Matty1515",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Matty1515/movie-trivia-quiz/issues"
+  },
+  "homepage": "https://github.com/Matty1515/movie-trivia-quiz#readme",
+  "devDependencies": {
+    "gulp": "^4.0.1"
+  }
+}
