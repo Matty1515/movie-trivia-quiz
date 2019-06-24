@@ -100,6 +100,7 @@ class MyComponent extends React.Component {
       return (
         <div>
           <h1>Movie Trivia Quiz</h1>
+          <p>Your task is to blah... blah... blah...</p>
           <button onClick={this.beginQuiz}>Begin</button>
         </div>
       )
@@ -121,7 +122,7 @@ class MyComponent extends React.Component {
       const queObj = getQueObj(queNum);
 
       // saves the question and correct answer
-      const que = queObj.question;
+      const que = queObj.question.replace("&#039;", "'").replace("&#039;", "'");
       const correctAns = queObj.correct_answer;
 
       // creates an array of multiple choice answers

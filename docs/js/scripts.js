@@ -1,3 +1,4 @@
+/* jshint esversion: 6 */
 // TO DO:
 // - turn off jshint
 // - correctly format or get rid of quote marks in answers
@@ -84,7 +85,7 @@ class MyComponent extends React.Component {
 
   render() {
     if (this.state.queNum === -1) {
-      return React.createElement("div", null, React.createElement("h1", null, "Movie Trivia Quiz"), React.createElement("button", {
+      return React.createElement("div", null, React.createElement("h1", null, "Movie Trivia Quiz"), React.createElement("p", null, "Your task is to blah... blah... blah..."), React.createElement("button", {
         onClick: this.beginQuiz
       }, "Begin"));
     } else if (this.state.queNum === this.state.queMax) {
@@ -100,7 +101,7 @@ class MyComponent extends React.Component {
 
       const queObj = getQueObj(queNum); // saves the question and correct answer
 
-      const que = queObj.question;
+      const que = queObj.question.replace("&#039;", "'").replace("&#039;", "'");
       const correctAns = queObj.correct_answer; // creates an array of multiple choice answers
 
       let ans = [];
