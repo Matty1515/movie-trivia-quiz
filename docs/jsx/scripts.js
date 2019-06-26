@@ -51,8 +51,17 @@ class MyComponent extends React.Component {
     this.restartQuiz = this.restartQuiz.bind(this);
   }
   
-  // component did mount fetch API
+  // componentDidMount fetch API - add this to the main quiz component when completed
   
+  componentDidMount() {
+    // MOVE THIS TO BEGIN QUIZ COMPONENT WHEN COMPLETED
+    // Note that currently this doesn't work when you restart quiz. That is because the component doesn't unmount so
+    // it cannot mount again. It should work properly when the components are split.
+    setTimeout(function(){
+      const wrapper = document.getElementById('beginContent');
+      wrapper.classList.add('wrapper--display');
+    }, 2000);
+  }
   handleButton(e) {
     this.setState({
       correctAns: e.target.value,
@@ -98,10 +107,14 @@ class MyComponent extends React.Component {
   render() {
     if (this.state.queNum === -1) {
       return (
-        <div>
-          <h1>Movie Trivia Quiz</h1>
-          <p>Your task is to blah... blah... blah...</p>
-          <button onClick={this.beginQuiz}>Begin</button>
+        <div className="wrapper">
+          <div className="wrapper__begin">
+            <h1>Movie Trivia Quiz</h1>
+            <div id="beginContent" className="begin__content">
+              <p>You will get 10 questions on various blah... Your task is to blah... blah... blah...</p>
+              <button onClick={this.beginQuiz}>Let's Begin!<span><i className="fas fa-angle-double-right"></i></span></button>
+            </div>
+          </div>
         </div>
       )
     } else if (this.state.queNum === this.state.queMax) {

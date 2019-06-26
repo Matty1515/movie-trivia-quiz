@@ -37,8 +37,18 @@ class MyComponent extends React.Component {
     this.beginQuiz = this.beginQuiz.bind(this);
     this.nextQue = this.nextQue.bind(this);
     this.restartQuiz = this.restartQuiz.bind(this);
-  } // component did mount fetch API
+  } // componentDidMount fetch API - add this to the main quiz component when completed
 
+
+  componentDidMount() {
+    // MOVE THIS TO BEGIN QUIZ COMPONENT WHEN COMPLETED
+    // Note that currently this doesn't work when you restart quiz. That is because the component doesn't unmount so
+    // it cannot mount again. It should work properly when the components are split.
+    setTimeout(function () {
+      const wrapper = document.getElementById('beginContent');
+      wrapper.classList.add('wrapper--display');
+    }, 2000);
+  }
 
   handleButton(e) {
     this.setState({
@@ -85,9 +95,18 @@ class MyComponent extends React.Component {
 
   render() {
     if (this.state.queNum === -1) {
-      return React.createElement("div", null, React.createElement("h1", null, "Movie Trivia Quiz"), React.createElement("p", null, "Your task is to blah... blah... blah..."), React.createElement("button", {
+      return React.createElement("div", {
+        className: "wrapper"
+      }, React.createElement("div", {
+        className: "wrapper__begin"
+      }, React.createElement("h1", null, "Movie Trivia Quiz"), React.createElement("div", {
+        id: "beginContent",
+        className: "begin__content"
+      }, React.createElement("p", null, "You will get 10 questions on various blah... Your task is to blah... blah... blah..."), React.createElement("button", {
         onClick: this.beginQuiz
-      }, "Begin"));
+      }, "Let's Begin!", React.createElement("span", null, React.createElement("i", {
+        className: "fas fa-angle-double-right"
+      }))))));
     } else if (this.state.queNum === this.state.queMax) {
       return React.createElement("div", null, React.createElement("h1", null, "Quiz over"), React.createElement("h3", null, "You got ", this.state.numCorrect, " questions right and ", this.state.numWrong, " wrong"), React.createElement("button", {
         onClick: this.restartQuiz
