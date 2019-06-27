@@ -96,9 +96,7 @@ class MyComponent extends React.Component {
   render() {
     if (this.state.queNum === -1) {
       return React.createElement("div", {
-        className: "wrapper"
-      }, React.createElement("div", {
-        className: "wrapper__begin"
+        className: "wrapper wrapper__begin"
       }, React.createElement("h1", null, "Movie Trivia Quiz"), React.createElement("div", {
         id: "beginContent",
         className: "begin__content"
@@ -106,7 +104,7 @@ class MyComponent extends React.Component {
         onClick: this.beginQuiz
       }, "Let's Begin!", React.createElement("span", null, React.createElement("i", {
         className: "fas fa-angle-double-right"
-      }))))));
+      })))));
     } else if (this.state.queNum === this.state.queMax) {
       return React.createElement("div", null, React.createElement("h1", null, "Quiz over"), React.createElement("h3", null, "You got ", this.state.numCorrect, " questions right and ", this.state.numWrong, " wrong"), React.createElement("button", {
         onClick: this.restartQuiz
@@ -135,7 +133,11 @@ class MyComponent extends React.Component {
       }
 
       shuffleArray(ans);
-      return React.createElement("div", null, React.createElement("h3", null, "Question #", this.state.queNum + 1), React.createElement("h1", null, que), React.createElement("form", {
+      return React.createElement("div", {
+        className: "wrapper wrapper__questions"
+      }, React.createElement("div", {
+        class: "title-container"
+      }, React.createElement("h1", null, "Movie Trivia Quiz")), React.createElement("h3", null, "Question #", this.state.queNum + 1), React.createElement("h2", null, que), React.createElement("form", {
         onSubmit: this.nextQue
       }, React.createElement("button", {
         type: "submit",

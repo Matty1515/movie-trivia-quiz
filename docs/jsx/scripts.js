@@ -107,13 +107,11 @@ class MyComponent extends React.Component {
   render() {
     if (this.state.queNum === -1) {
       return (
-        <div className="wrapper">
-          <div className="wrapper__begin">
-            <h1>Movie Trivia Quiz</h1>
-            <div id="beginContent" className="begin__content">
-              <p>You will get 10 questions on various blah... Your task is to blah... blah... blah...</p>
-              <button onClick={this.beginQuiz}>Let's Begin!<span><i className="fas fa-angle-double-right"></i></span></button>
-            </div>
+        <div className="wrapper wrapper__begin">
+          <h1>Movie Trivia Quiz</h1>
+          <div id="beginContent" className="begin__content">
+            <p>You will get 10 questions on various blah... Your task is to blah... blah... blah...</p>
+            <button onClick={this.beginQuiz}>Let's Begin!<span><i className="fas fa-angle-double-right"></i></span></button>
           </div>
         </div>
       )
@@ -153,9 +151,12 @@ class MyComponent extends React.Component {
       shuffleArray(ans);
       
       return (
-        <div>
+        <div className="wrapper wrapper__questions">
+          <div class="title-container">
+            <h1>Movie Trivia Quiz</h1>
+          </div>
           <h3>Question #{this.state.queNum + 1}</h3>
-          <h1>{que}</h1>
+          <h2>{que}</h2>
           <form onSubmit={this.nextQue}>
             <button 
               type="submit"
